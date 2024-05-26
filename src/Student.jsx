@@ -1,4 +1,4 @@
-import React from 'react'
+import PropsTypes from 'prop-types'
 
 function Student(props) {
   return (
@@ -8,6 +8,18 @@ function Student(props) {
         <p>Student: {props.isStudent ? "Yes" : "NO"}</p>
     </div>
   )
+}
+
+Student.propTypes = {
+    name: PropsTypes.string,
+    age: PropsTypes.number,
+    isStudent: PropsTypes.bool,
+}
+
+Student.defaultProps = {
+    name: "Guest",
+    age: 0,
+    isStudent: false,
 }
 
 export default Student
